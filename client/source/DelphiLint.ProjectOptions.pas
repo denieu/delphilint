@@ -50,6 +50,7 @@ implementation
 uses
     System.IOUtils
   , DelphiLint.Utils
+  , DelphiLint.Context
   ;
 
 //______________________________________________________________________________________________________________________
