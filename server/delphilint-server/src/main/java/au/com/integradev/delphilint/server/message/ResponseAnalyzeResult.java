@@ -46,15 +46,15 @@ public final class ResponseAnalyzeResult {
     Set<IssueData> issues =
         delphiIssues.stream()
             .map(
-                delphiIssue -> {
-                  return new IssueData(
+                delphiIssue ->
+                  new IssueData(
                       delphiIssue.getRuleKey(),
                       delphiIssue.getMessage(),
                       delphiIssue.getFile(),
                       transformRange(delphiIssue.getTextRange()),
                       transformMetadata(delphiIssue.getMetadata()),
-                      transformQuickFixes(delphiIssue.getQuickFixes()));
-                })
+                      transformQuickFixes(delphiIssue.getQuickFixes()))
+                )
             .collect(Collectors.toSet());
 
     return new ResponseAnalyzeResult(issues);
